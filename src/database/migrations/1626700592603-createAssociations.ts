@@ -23,14 +23,10 @@ export class createAssociations1626700592603 implements MigrationInterface {
               {
                 name: "latitude",
                 type: "decimal",
-                scale: 10,// números depois da vírgula
-                precision: 2,// números antes da vírgula
               },
               {
                 name: "longitude",
                 type: "decimal",
-                scale: 10,
-                precision: 2,
               },
               {
                 name: "about", // informações sobre o orfanato
