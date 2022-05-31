@@ -1,0 +1,33 @@
+version: "3.9"
+
+services:
+  database:
+    image: postgres
+    container_name: database_ongs
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=ongs
+    volumes:
+      - pgdata:/data/postgres
+  app:
+    build: .
+    container_name: backend
+    restart: always
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/usr/app
+    links:
+      - database
+    depends_on:
+      - database
+
+
+volumes:
+  pgdata:
+    driver: local
+

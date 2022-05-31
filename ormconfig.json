@@ -1,0 +1,14 @@
+{
+  "type":"postgres",
+  "port": 5432,
+  "host":"localhost",
+  "username":"docker",
+  "password":"docker",
+  "database":"ongs",
+  "migrations":["./src/database/migrations/*.ts"],
+  "entities": ["./src/entities/*.ts"],
+  "cli":{
+    "migrationsDir":"./src/database/migrations",
+    "entitiesDir":"src/entities"
+  }
+}
